@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso CPC 32 - Inscrição Aberta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .video-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+      }
+      .video-popup iframe {
+        width: 80%;
+        height: 80%;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-100">
+    <!-- Hero Section -->
+    <!-- Hero Section com Vídeo Dinâmico -->
+    <section
+      class="relative h-screen flex items-center justify-center text-center bg-[#141e28] text-white overflow-hidden"
+    >
+      <!-- Vídeo de fundo -->
+      <video
+        id="heroVideo"
+        class="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+        autoplay
+        muted
+        playsinline
+      >
+        <source id="videoSource" src="assets/transfer.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Camada de sobreposição escura para melhor legibilidade -->
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+
+      <!-- Conteúdo principal -->
+      <div class="relative z-10 max-w-2xl px-6">
+        <h1 class="text-5xl font-bold">
+          Domine o CPC 32 - Tributos sobre o Lucro
+        </h1>
+        <p class="mt-4 text-lg">
+          Aprenda tudo sobre o CPC 32 e como ele impacta as demonstrações
+          financeiras!
+        </p>
+        <a
+          href="https://wa.me/5511911227079?text=Ol%C3%A1%20%2C%20Gostaria%20de%20me%20inscrever%20para%20o%20curso%20CPC32!"
+          target="_blank"
+          class="mt-6 inline-block bg-yellow-500 text-white py-3 px-8 rounded-lg text-xl hover:bg-yellow-600 transition duration-300"
+        >
+          Inscreva-se Agora
+        </a>
+      </div>
+    </section>
+
+    <!-- Script para alternar os vídeos -->
+    <script>
+      const video = document.getElementById("heroVideo");
+      const videos = ["assets/transfer.mp4", "assets/transfer-mobile.mp4"];
+      let currentVideo = 0;
+
+      video.addEventListener("ended", () => {
+        currentVideo = (currentVideo + 1) % videos.length;
+        video.src = videos[currentVideo];
+        video.play();
+      });
+    </script>
+
+    <!-- Benefícios Section -->
+    <section class="py-16 bg-white text-center">
+      <h2 class="text-4xl font-bold text-[#141e28]">Por que se Inscrever?</h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-8 px-6"
+      >
+        <div class="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <i class="fas fa-calendar-check text-4xl text-[#141e28] mb-4"></i>
+          <h3 class="text-xl font-semibold">Flexibilidade</h3>
+          <p>Acesse o curso quando e onde quiser.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <i class="fas fa-certificate text-4xl text-[#141e28] mb-4"></i>
+          <h3 class="text-xl font-semibold">Certificação</h3>
+          <p>Receba um certificado reconhecido no mercado.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <i class="fas fa-laptop text-4xl text-[#141e28] mb-4"></i>
+          <h3 class="text-xl font-semibold">Curso EAD</h3>
+          <p>Estude no seu ritmo com a modalidade 100% online.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <i class="fas fa-user-tie text-4xl text-[#141e28] mb-4"></i>
+          <h3 class="text-xl font-semibold">Crescimento Profissional</h3>
+          <p>Amplie suas oportunidades no mercado.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <i class="fas fa-headset text-4xl text-[#141e28] mb-4"></i>
+          <h3 class="text-xl font-semibold">Suporte Dedicado</h3>
+          <p>Receba suporte exclusivo com especialistas.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <i class="fas fa-chalkboard-teacher text-4xl text-[#141e28] mb-4"></i>
+          <h3 class="text-xl font-semibold">Mentoria Exclusiva</h3>
+          <p>
+            30 dias de mentoria para tirar dúvidas diretamente com o ME.
+            Lourivaldo Lopes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-100 py-10 px-6">
+      <div class="max-w-5xl mx-auto p-6">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h2 class="text-3xl font-bold text-yellow-500 mb-4">
+            CPC 32 - Tributos Correntes e Diferidos
+          </h2>
+          <p class="mb-4 text-lg">Confira os principais tópicos abordados:</p>
+          <ul class="list-disc ml-6 space-y-2">
+            <li>Conceituação de Lucro Contábil (DRE)</li>
+            <li>Segregação de Lucro Contábil x Lucro Fiscal</li>
+            <li>Conceito de Tributos Correntes e Diferidos</li>
+          </ul>
+          <button
+            id="toggleBtn"
+            class="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md transition duration-300"
+          >
+            Ver mais
+          </button>
+          <div id="moreContent" class="hidden mt-4">
+            <ul class="list-disc ml-6 space-y-2">
+              <li>Conceito de Ativos e Passivos Fiscais Diferidos</li>
+              <li>Diferenças Temporárias Ativas e Passivas</li>
+              <li>Mensuração de Ativos e Passivos Fiscais Diferidos</li>
+              <li>Tributação: Opção pelo Regime de Caixa</li>
+              <li>Obediência ao Regime de Competência</li>
+              <li>
+                Impactos no resultado pelo não reconhecimento dos tributos
+                Diferidos
+              </li>
+              <li>Estudo de Caso e Notas Explicativas</li>
+            </ul>
+            <h3 class="text-xl font-semibold mt-6">A quem se destina:</h3>
+            <p class="mt-2">
+              A todos os profissionais que trabalham com empresas tributadas
+              pelo Lucro Presumido e Simples Nacional que optaram pelo Regime de
+              Caixa.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-6">Objetivo:</h3>
+            <p class="mt-2">
+              O regime de Caixa é uma decisão inteligente por parte dos
+              contadores, com o intuito de oxigenar o Fluxo de Caixa das
+              Pequenas empresas. No entanto, a contabilidade deve ser
+              obrigatoriamente registrada pelo regime de competência.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-6">Público Alvo:</h3>
+            <p class="mt-2">
+              Contabilistas em geral, administradores de empresas, tributaristas
+              e pessoas envolvidas com as questões tributárias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formas de Pagamento -->
+    <section class="py-16 bg-white text-center">
+      <h2 class="text-4xl font-bold text-[#141e28]">Formas de Pagamento</h2>
+      <p class="text-lg text-gray-700 mt-2">
+        Aceitamos as principais formas de pagamento no Brasil.
+      </p>
+
+      <!-- Ícones de pagamento -->
+      <div class="mt-6 flex flex-wrap justify-center gap-8">
+        <img src="assets/visa.png" alt="Visa" class="h-12 w-auto" />
+        <img src="assets/ms.png" alt="MasterCard" class="h-12 w-auto" />
+        <img src="assets/elo.png" alt="Elo" class="h-12 w-auto" />
+        <img src="assets/amx.png" alt="American Express" class="h-12 w-auto" />
+        <img src="assets/pix.png" alt="Pix" class="h-12 w-auto" />
+      </div>
+
+      <p class="text-md text-gray-600 mt-4">
+        Pagamentos seguros e rápidos via cartão ou Pix.
+      </p>
+    </section>
+
+    <section
+      id="inscricao"
+      class="py-16 bg-gradient-to-r from-yellow-500 to-yellow-400 text-white text-center"
+    >
+      <div class="max-w-2xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold mb-4 drop-shadow-lg">
+          Garanta Sua Vaga Agora!
+        </h2>
+        <p class="text-lg mb-6">
+          Não perca essa oportunidade, faça sua inscrição agora mesmo e garanta
+          seu lugar no curso CPC32!
+        </p>
+        <a
+          href="https://wa.me/5511911227079?text=Ol%C3%A1%20%2C%20Gostaria%20de%20me%20inscrever%20para%20o%20curso%20CPC32!"
+          target="_blank"
+          class="mt-6 inline-block bg-white text-yellow-600 py-3 px-8 rounded-full text-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-100"
+        >
+          Inscreva-se Já
+        </a>
+      </div>
+    </section>
+
+    <footer class="bg-[#141e28] text-white py-8 text-center">
+      <p class="text-sm">
+        &copy; 2025 Devout Auditoria. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <!-- Video Popup -->
+    <div id="videoPopup" class="video-popup" onclick="closeVideoPopup()">
+      <iframe
+        id="youtubeVideo"
+        src=""
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <script>
+      function openVideoPopup() {
+        document.getElementById("videoPopup").style.display = "flex";
+        document.getElementById("youtubeVideo").src =
+          "https://www.youtube.com/embed/1mRokU6-6uo?si=X-DRDVZu8Ckrk04P";
+      }
+      function closeVideoPopup() {
+        document.getElementById("videoPopup").style.display = "none";
+        document.getElementById("youtubeVideo").src = "";
+      }
+    </script>
+    <script>
+      document
+        .getElementById("toggleBtn")
+        .addEventListener("click", function () {
+          const moreContent = document.getElementById("moreContent");
+          if (moreContent.classList.contains("hidden")) {
+            moreContent.classList.remove("hidden");
+            this.textContent = "Ver menos";
+          } else {
+            moreContent.classList.add("hidden");
+            this.textContent = "Ver mais";
+          }
+        });
+    </script>
+  </body>
+</html>
